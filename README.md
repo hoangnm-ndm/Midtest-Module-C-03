@@ -18,42 +18,54 @@ Xây dựng ứng dụng **Project Management System (PMS)** sử dụng **React
 - Xây dựng hệ thống định tuyến với các trang:
   - **Trang danh sách dự án**: Hiển thị tất cả dự án, trạng thái (đang thực hiện, hoàn thành, tạm dừng), và tiến độ (% hoàn thành).
   - **Trang chi tiết dự án**: Hiển thị thông tin dự án và danh sách các nhiệm vụ (tasks) thuộc dự án.
-  - **Trang hồ sơ người dùng**: Hiển thị thông tin người dùng và danh sách các dự án/nhiệm vụ họ được giao.
 - Xử lý **route không tồn tại (404)** với giao diện lỗi thân thiện, có nút quay lại trang chủ.
 - Giao diện phải thân thiện, dễ sử dụng.
 
-## 2. Quản lý Dự án (Projects) (3 điểm)
+## 2. Quản lý Dự án (Projects) (2 điểm)
 
 - **GET**: Lấy danh sách dự án từ API và hiển thị thông tin: tên, mô tả, ngày bắt đầu, ngày kết thúc dự kiến, trạng thái, và tiến độ (tiến độ tính theo %).
 - **POST**: Thêm dự án mới thông qua form (bao gồm tên, mô tả, ngày bắt đầu, ngày kết thúc, trạng thái, tiến độ).
 - **PUT**: Cập nhật thông tin dự án (bao gồm thay đổi trạng thái và tiến độ).
 - **DELETE**: Xóa dự án (thêm xác nhận trước khi xóa).
-- **Validation**: Đảm bảo các trường là bắt buộc, ngày kết thúc phải lớn hơn ngày bắt đầu. (1 điểm)
+- **Validation**: Đảm bảo các trường là bắt buộc, ngày kết thúc phải lớn hơn ngày bắt đầu.
 
-## 3. Quản lý Nhiệm vụ (Tasks) (3 điểm)
+## 3. Quản lý Nhiệm vụ (Tasks) (2 điểm)
 
 - **GET**: Lấy danh sách nhiệm vụ theo dự án, hiển thị tiêu đề, mô tả, trạng thái (chưa bắt đầu, đang thực hiện, hoàn thành), và người được giao (assignee).
 - **POST**: Thêm nhiệm vụ mới cho dự án qua form (bao gồm tiêu đề, mô tả, trạng thái, người được giao, ngày hết hạn).
 - **PUT**: Cập nhật thông tin nhiệm vụ (bao gồm thay đổi người được giao).
 - **DELETE**: Xóa nhiệm vụ (thêm xác nhận trước khi xóa).
-- **Validation**: Đảm bảo các trường là bắt buộc, ngày hết hạn khi giao task cần ở tương lai. (1 điểm)
+- **Validation**: Đảm bảo các trường là bắt buộc, ngày hết hạn khi giao task cần ở tương lai.
 
-## 4. Các tính năng nâng cao (3 điểm)
+## 4. Các tính năng nâng cao (2 điểm)
 
-- **Tìm kiếm**:
-  - Tìm kiếm dự án theo tên. 0.5 điểm
-  - Tìm kiếm nhiệm vụ theo người được giao. 0.5 điểm
 - **Lọc và sắp xếp**:
   - Lọc dự án theo trạng thái (đang thực hiện, hoàn thành, tạm dừng). 0.5 điểm
   - Sắp xếp dự án theo tên (A-Z, Z-A), ngày bắt đầu (mới nhất, cũ nhất), hoặc tiến độ (thấp đến cao, cao đến thấp). 0.5 điểm
   - Sắp xếp nhiệm vụ theo trạng thái hoặc ngày hết hạn. 0.5 điểm
 - **Thống kê**: Hiển thị bảng thống kê số lượng nhiệm vụ theo trạng thái (chưa bắt đầu, đang thực hiện, hoàn thành) trong một dự án. 0.5 điểm
 
+## 5. Authentication & Authorization (3 điểm)
+
+- **Đăng ký:** 1 điểm
+  - Cho phép người dùng đăng ký tài khoản mới với các trường: tên, email, mật khẩu.
+  - Role mặc định là `member`.
+  - **Validation:** Email là duy nhất, mật khẩu tối thiểu 6 ký tự.
+- **Đăng nhập:** 1 điểm
+  - Cho phép người dùng đăng nhập với email và mật khẩu.
+  - **Validation:** Hiển thị thông báo lỗi nếu đăng nhập không thành công.
+  - Lưu và duy trì trạng thái đăng nhập trong localStorage.
+- **Bảo vệ các route:** 1 điểm
+  - Chỉ cho phép người dùng đã đăng nhập truy cập vào các trang xem dự án và nhiệm vụ.
+  - Hiển thị thông báo lỗi nếu người dùng chưa đăng nhập khi cố gắng truy cập.
+  - Chỉ admin mới có quyền thêm, sửa, xóa dự án và nhiệm vụ.
+
 ## Quy ước tính điểm
 
 - **Routing và giao diện**: 1 điểm
-- **Quản lý dự án**: 3 điểm
-- **Quản lý nhiệm vụ**: 3 điểm
-- **Tính năng nâng cao**: 3 điểm
+- **Quản lý dự án**: 2 điểm
+- **Quản lý nhiệm vụ**: 2 điểm
+- **Tính năng nâng cao**: 2 điểm
+- **Authentication & Authorization**: 3 điểm
 
 **Hết.**
