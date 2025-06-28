@@ -1,0 +1,86 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "Phát triển website thương mại điện tử",
+      "description": "Xây dựng website bán hàng với React và Node.js.",
+      "startDate": "2025-05-01T00:00:00Z",
+      "endDate": "2025-08-01T00:00:00Z",
+      "status": "in-progress",
+      "progress": 40
+    },
+    {
+      "id": 2,
+      "name": "Ứng dụng quản lý kho",
+      "description": "Ứng dụng quản lý kho hàng với giao diện thân thiện.",
+      "startDate": "2025-06-01T00:00:00Z",
+      "endDate": "2025-09-01T00:00:00Z",
+      "status": "paused",
+      "progress": 20
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "projectId": 1,
+      "title": "Thiết kế giao diện người dùng",
+      "description": "Thiết kế UI cho trang chủ và trang sản phẩm.",
+      "status": "in-progress",
+      "assigneeId": 1,
+      "dueDate": "2025-06-01T00:00:00Z"
+    },
+    {
+      "id": 2,
+      "projectId": 1,
+      "title": "Xây dựng API sản phẩm",
+      "description": "Tạo API để lấy danh sách sản phẩm.",
+      "status": "completed",
+      "assigneeId": 2,
+      "dueDate": "2025-05-20T00:00:00Z"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Nguyen Van A",
+      "email": "a@example.com",
+      "password": "hashed_password_1",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "name": "Tran Thi B",
+      "email": "b@example.com",
+      "password": "hashed_password_2",
+      "role": "member"
+    },
+    {
+      "id": 3,
+      "name": "Le Van C",
+      "email": "c@example.com",
+      "password": "hashed_password_3",
+      "role": "member"
+    },
+    {
+      "id": 4,
+      "name": "Pham Thi D",
+      "email": "d@example.com",
+      "password": "hashed_password_4",
+      "role": "admin"
+    },
+    {
+      "id": 5,
+      "name": "Hoang Van E",
+      "email": "e@example.com",
+      "password": "hashed_password_5",
+      "role": "member"
+    },
+    {
+      "id": 6,
+      "name": "Do Thi F",
+      "email": "f@example.com",
+      "password": "hashed_password_6",
+      "role": "member"
+    }
+  ]
+}
