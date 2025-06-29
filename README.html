@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="h%C6%B0%E1%BB%9Bng-d%E1%BA%ABn-l%C3%A0m-b%C3%A0i---b%C3%A0i-ki%E1%BB%83m-tra-reactjs-n%C3%A2ng-cao">Hướng dẫn làm bài - Bài kiểm tra ReactJS nâng cao</h1>
+<ul>
+<li><strong>Thời gian làm bài</strong>: 150 phút.</li>
+<li><strong>Yêu cầu môi trường</strong>:
+<ul>
+<li>Tải Repository mẫu này về máy và thực hiện code trực tiếp trong thư mục này.</li>
+<li>Sau khi hoàn thành, chấm bài tại lớp.</li>
+<li><strong>Tắt tất cả các extension AI</strong> (như Tabnine, GitHub Copilot, Codeium, v.v.) trong quá trình làm bài.</li>
+<li>Được phép sử dụng các tài liệu tham khảo giao diện như <strong>TailwindCSS</strong>, <strong>Bootstrap</strong>, <strong>Material-UI</strong>, <strong>Boxicons</strong>, hoặc <strong>FontAwesome</strong>.</li>
+</ul>
+</li>
+<li><strong>Công cụ backend</strong>: Sử dụng <code>json-server</code> để mock API (cài đặt: <code>npm install -g json-server</code>).</li>
+</ul>
+<h2 id="y%C3%AAu-c%E1%BA%A7u">Yêu cầu</h2>
+<p>Xây dựng ứng dụng <strong>Project Management System (PMS)</strong> sử dụng <strong>ReactJS</strong> và <strong>json-server</strong>, với các tính năng sau:</p>
+<h2 id="1-giao-di%E1%BB%87n-v%C3%A0-routing-1-%C4%91i%E1%BB%83m">1. Giao diện và Routing (1 điểm)</h2>
+<ul>
+<li>Dữ liệu được cung cấp sẵn trong file <code>db.json</code> với các thực thể: <strong>Projects</strong>, <strong>Tasks</strong>, và <strong>Users</strong>.</li>
+<li>Xây dựng hệ thống định tuyến với các trang:
+<ul>
+<li><strong>Trang danh sách dự án</strong>: Hiển thị tất cả dự án, trạng thái (đang thực hiện, hoàn thành, tạm dừng), và tiến độ (% hoàn thành).</li>
+<li><strong>Trang chi tiết dự án</strong>: Hiển thị thông tin dự án và danh sách các nhiệm vụ (tasks) thuộc dự án.</li>
+</ul>
+</li>
+<li>Xử lý <strong>route không tồn tại (404)</strong> với giao diện lỗi thân thiện, có nút quay lại trang chủ.</li>
+</ul>
+<h2 id="2-qu%E1%BA%A3n-l%C3%BD-d%E1%BB%B1-%C3%A1n-projects-2-%C4%91i%E1%BB%83m">2. Quản lý Dự án (Projects) (2 điểm)</h2>
+<ul>
+<li><strong>GET</strong>: Lấy danh sách dự án từ API và hiển thị thông tin: tên, mô tả, ngày bắt đầu, ngày kết thúc dự kiến, trạng thái, và tiến độ (tiến độ tính theo %).</li>
+<li><strong>POST</strong>: Thêm dự án mới thông qua form (bao gồm tên, mô tả, ngày bắt đầu, ngày kết thúc, trạng thái, tiến độ).</li>
+<li><strong>PUT</strong>: Cập nhật thông tin dự án.</li>
+<li><strong>DELETE</strong>: Xóa dự án (thêm xác nhận trước khi xóa).</li>
+<li><strong>Validation</strong>: Đảm bảo các trường là bắt buộc, ngày kết thúc phải lớn hơn ngày bắt đầu.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> statusOptions = [
+  { <span class="hljs-attr">value</span>: <span class="hljs-string">"in-progress"</span>, <span class="hljs-attr">label</span>: <span class="hljs-string">"Đang thực hiện"</span> },
+  { <span class="hljs-attr">value</span>: <span class="hljs-string">"completed"</span>, <span class="hljs-attr">label</span>: <span class="hljs-string">"Hoàn thành"</span> },
+  { <span class="hljs-attr">value</span>: <span class="hljs-string">"paused"</span>, <span class="hljs-attr">label</span>: <span class="hljs-string">"Tạm dừng"</span> },
+];
+</div></code></pre>
+<h2 id="3-qu%E1%BA%A3n-l%C3%BD-nhi%E1%BB%87m-v%E1%BB%A5-tasks-2-%C4%91i%E1%BB%83m">3. Quản lý Nhiệm vụ (Tasks) (2 điểm)</h2>
+<ul>
+<li><strong>GET</strong>: Lấy danh sách nhiệm vụ theo dự án, hiển thị tiêu đề, mô tả, trạng thái, người được giao (assignee), ngày đến hạn (dueDate).</li>
+<li><strong>POST</strong>: Thêm nhiệm vụ mới cho dự án qua form.</li>
+<li><strong>PUT</strong>: Cập nhật thông tin nhiệm vụ.</li>
+<li><strong>DELETE</strong>: Xóa nhiệm vụ (thêm xác nhận trước khi xóa).</li>
+<li><strong>Validation</strong>: Đảm bảo các trường là bắt buộc, ngày hết hạn khi giao task cần ở thì tương lai.</li>
+</ul>
+<h2 id="4-c%C3%A1c-t%C3%ADnh-n%C4%83ng-n%C3%A2ng-cao-2-%C4%91i%E1%BB%83m">4. Các tính năng nâng cao (2 điểm)</h2>
+<ul>
+<li><strong>Lọc và sắp xếp</strong>:
+<ul>
+<li>Lọc dự án theo trạng thái (0.5 điểm).</li>
+<li>Sắp xếp dự án theo tên (A-Z, Z-A), ngày bắt đầu (mới nhất, cũ nhất), hoặc tiến độ (thấp đến cao, cao đến thấp) (0.5 điểm).</li>
+<li>Sắp xếp nhiệm vụ theo trạng thái hoặc ngày hết hạn (0.5 điểm).</li>
+</ul>
+</li>
+<li><strong>Thống kê</strong>: Hiển thị bảng thống kê số lượng nhiệm vụ theo trạng thái (chưa bắt đầu, đang thực hiện, hoàn thành) trong một dự án (0.5 điểm).</li>
+</ul>
+<h2 id="5-authentication--authorization-3-%C4%91i%E1%BB%83m">5. Authentication &amp; Authorization (3 điểm)</h2>
+<ul>
+<li><strong>Đăng ký:</strong> 1 điểm
+<ul>
+<li>Cho phép người dùng đăng ký tài khoản mới với các trường: tên, email, mật khẩu.</li>
+<li>Role mặc định là <code>member</code>.</li>
+<li><strong>Validation:</strong> Email là duy nhất, mật khẩu tối thiểu 6 ký tự.</li>
+</ul>
+</li>
+<li><strong>Đăng nhập:</strong> 1 điểm
+<ul>
+<li>Cho phép người dùng đăng nhập với email và mật khẩu.</li>
+<li><strong>Validation:</strong> Hiển thị thông báo lỗi nếu đăng nhập không thành công.</li>
+<li>Lưu và duy trì trạng thái đăng nhập trong localStorage (bao gồm thông tin user và token).</li>
+</ul>
+</li>
+<li><strong>Bảo vệ các route:</strong> 1 điểm
+<ul>
+<li>Chỉ cho phép người dùng đã đăng nhập truy cập vào các trang xem dự án và nhiệm vụ.</li>
+<li>Hiển thị thông báo lỗi nếu người dùng chưa đăng nhập khi cố gắng truy cập.</li>
+<li>Chỉ admin mới có quyền thêm, sửa, xóa dự án và nhiệm vụ, thành viên trong nhóm chỉ có thể xem.</li>
+</ul>
+</li>
+</ul>
+<h2 id="quy-%C6%B0%E1%BB%9Bc-t%C3%ADnh-%C4%91i%E1%BB%83m">Quy ước tính điểm</h2>
+<ul>
+<li><strong>Routing và giao diện</strong>: 1 điểm</li>
+<li><strong>Quản lý dự án</strong>: 2 điểm</li>
+<li><strong>Quản lý nhiệm vụ</strong>: 2 điểm</li>
+<li><strong>Tính năng nâng cao</strong>: 2 điểm</li>
+<li><strong>Authentication &amp; Authorization</strong>: 3 điểm</li>
+</ul>
+<p><strong>Hết.</strong></p>
+
+</body>
+</html>
