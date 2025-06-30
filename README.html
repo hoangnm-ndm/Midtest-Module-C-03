@@ -385,14 +385,16 @@ code {
 <li>Dữ liệu được cung cấp sẵn trong file <code>db.json</code> với các thực thể: <strong>Projects</strong>, <strong>Tasks</strong>, và <strong>Users</strong>.</li>
 <li>Xây dựng hệ thống định tuyến với các trang:
 <ul>
-<li><strong>Trang danh sách dự án</strong>: Hiển thị tất cả dự án, trạng thái (đang thực hiện, hoàn thành, tạm dừng), và tiến độ (% hoàn thành).</li>
-<li><strong>Trang chi tiết dự án</strong>: Hiển thị thông tin dự án và danh sách các nhiệm vụ (tasks) thuộc dự án.</li>
+<li><strong>Trang danh sách dự án</strong>: <code>/</code> hoặc <code>/projects</code> Hiển thị tất cả dự án, trạng thái (đang thực hiện, hoàn thành, tạm dừng), và tiến độ (% hoàn thành).</li>
+<li><strong>Trang chi tiết dự án</strong>: <code>/projects/:id</code> Hiển thị thông tin dự án và danh sách các nhiệm vụ (tasks) thuộc dự án.</li>
 </ul>
 </li>
 <li>Xử lý <strong>route không tồn tại (404)</strong> với giao diện lỗi thân thiện, có nút quay lại trang chủ.</li>
+<li>Có header và navigation bar với các liên kết đến trang danh sách dự án và trang chi tiết dự án.</li>
 </ul>
 <h2 id="2-qu%E1%BA%A3n-l%C3%BD-d%E1%BB%B1-%C3%A1n-projects-2-%C4%91i%E1%BB%83m">2. Quản lý Dự án (Projects) (2 điểm)</h2>
 <ul>
+<li>Url: <code>/projects</code></li>
 <li><strong>GET</strong>: Lấy danh sách dự án từ API và hiển thị thông tin: tên, mô tả, ngày bắt đầu, ngày kết thúc dự kiến, trạng thái, và tiến độ (tiến độ tính theo %).</li>
 <li><strong>POST</strong>: Thêm dự án mới thông qua form (bao gồm tên, mô tả, ngày bắt đầu, ngày kết thúc, trạng thái, tiến độ).</li>
 <li><strong>PUT</strong>: Cập nhật thông tin dự án.</li>
@@ -407,6 +409,7 @@ code {
 </div></code></pre>
 <h2 id="3-qu%E1%BA%A3n-l%C3%BD-nhi%E1%BB%87m-v%E1%BB%A5-tasks-2-%C4%91i%E1%BB%83m">3. Quản lý Nhiệm vụ (Tasks) (2 điểm)</h2>
 <ul>
+<li>Url: <code>/projects/:projectId/tasks</code></li>
 <li><strong>GET</strong>: Lấy danh sách nhiệm vụ theo dự án, hiển thị tiêu đề, mô tả, trạng thái, người được giao (assignee), ngày đến hạn (dueDate).</li>
 <li><strong>POST</strong>: Thêm nhiệm vụ mới cho dự án qua form.</li>
 <li><strong>PUT</strong>: Cập nhật thông tin nhiệm vụ.</li>

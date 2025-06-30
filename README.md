@@ -16,12 +16,14 @@ Xây dựng ứng dụng **Project Management System (PMS)** sử dụng **React
 
 - Dữ liệu được cung cấp sẵn trong file `db.json` với các thực thể: **Projects**, **Tasks**, và **Users**.
 - Xây dựng hệ thống định tuyến với các trang:
-  - **Trang danh sách dự án**: Hiển thị tất cả dự án, trạng thái (đang thực hiện, hoàn thành, tạm dừng), và tiến độ (% hoàn thành).
-  - **Trang chi tiết dự án**: Hiển thị thông tin dự án và danh sách các nhiệm vụ (tasks) thuộc dự án.
+  - **Trang danh sách dự án**: `/` hoặc `/projects` Hiển thị tất cả dự án, trạng thái (đang thực hiện, hoàn thành, tạm dừng), và tiến độ (% hoàn thành).
+  - **Trang chi tiết dự án**: `/projects/:id` Hiển thị thông tin dự án và danh sách các nhiệm vụ (tasks) thuộc dự án.
 - Xử lý **route không tồn tại (404)** với giao diện lỗi thân thiện, có nút quay lại trang chủ.
+- Có header và navigation bar với các liên kết đến trang danh sách dự án và trang chi tiết dự án.
 
 ## 2. Quản lý Dự án (Projects) (2 điểm)
 
+- Url: `/projects`
 - **GET**: Lấy danh sách dự án từ API và hiển thị thông tin: tên, mô tả, ngày bắt đầu, ngày kết thúc dự kiến, trạng thái, và tiến độ (tiến độ tính theo %).
 - **POST**: Thêm dự án mới thông qua form (bao gồm tên, mô tả, ngày bắt đầu, ngày kết thúc, trạng thái, tiến độ).
 - **PUT**: Cập nhật thông tin dự án.
@@ -38,6 +40,7 @@ const statusOptions = [
 
 ## 3. Quản lý Nhiệm vụ (Tasks) (2 điểm)
 
+- Url: `/projects/:projectId/tasks`
 - **GET**: Lấy danh sách nhiệm vụ theo dự án, hiển thị tiêu đề, mô tả, trạng thái, người được giao (assignee), ngày đến hạn (dueDate).
 - **POST**: Thêm nhiệm vụ mới cho dự án qua form.
 - **PUT**: Cập nhật thông tin nhiệm vụ.
